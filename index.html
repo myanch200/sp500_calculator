@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body class="bg-gray-200 min-h-screen flex items-center justify-center">
+    <div class="container mx-auto px-4">
+        <div class="bg-white p-8 rounded-lg shadow-lg">
+            <h1 class="text-xl font-bold mb-4">Investment Calculator</h1>
+            <form id="investmentForm">
+                <label for="startingAmount" class="block font-medium">Starting amount:</label>
+                <input type="number" id="startingAmount" class="border p-2 rounded w-full" required>
+
+                <label for="yearsToInvest" class="block font-medium mt-4">Years to invest:</label>
+                <input type="number" id="yearsToInvest" class="border p-2 rounded w-full" required>
+
+                <label for="additionalContributions" class="block font-medium mt-4">Additional contributions:</label>
+                <input type="number" id="additionalContributions" class="border p-2 rounded w-full">
+                <select id="contributionFrequency" class="border p-2 rounded">
+                    <option value="monthly">per month</option>
+                    <option value="weekly">per week</option>
+                    <option value="annually">per year</option>
+                </select>
+
+                <label for="rateOfReturn" class="block font-medium mt-4">Hypothetical annual rate of return:</label>
+                <input type="number" id="rateOfReturn" class="border p-2 rounded w-full" step="0.01" required>
+
+                <label for="currency" class="block font-medium mt-4">Currency:</label>
+                <select id="currency" class="border p-2 rounded w-full">
+                    <option value="USD">USD - US Dollar</option>
+                    <option value="EUR">EUR - Euro</option>
+                    <option value="GBP">GBP - British Pound</option>
+                </select>
+
+                <button type="submit" class="mt-4 bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Calculate</button>
+            </form>
+            <div id="resultsWrapper">
+              <div id="summary">
+
+              </div>
+              <div id="chartContainer" class="mt-8">
+                <canvas id="investmentChart"></canvas>
+              </div>
+              <div id="results"></div>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="calculator.js"></script>
+</body>
+</html>
